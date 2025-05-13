@@ -1,0 +1,29 @@
+name: Deploy Discord Bot
+
+on:
+  push:
+    branches:
+      - main  # main 브랜치에 푸시될 때마다 실행
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # 사용할 Python 버전
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Set up .env file
+        run: echo "DISCORD_TOKEN=${{ secrets.discord_zero_bot_token }}" >> .env  # GitHub Secrets에서 디스코드 토큰을 가져옴
+
+      - name: Run bot
+        run: python bot.py  # 봇 실행 명령어
