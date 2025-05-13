@@ -23,7 +23,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Set up .env file
-        run: echo "DISCORD_TOKEN=${{ secrets.discord_zero_bot_token }}" >> .env  # GitHub Secrets에서 디스코드 토큰을 가져옴
+        run: echo "DISCORD_TOKEN=${{ secrets.DISCORD_ZERO_BOT_TOKEN }}" >> .env  # GitHub Secrets에서 디스코드 토큰을 가져옴
 
       - name: Run bot
         run: python Discord_Zero_bot.py  # 봇 실행 명령어
