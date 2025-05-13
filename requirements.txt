@@ -1,2 +1,14 @@
 nextcord
 python-dotenv
+youtube_dl
+commands
+tasks
+yt_dlp
+asyncio
+os
+logging
+random
+SlashOption
+datetime
+time
+Interaction
