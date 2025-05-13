@@ -1,1 +1,1 @@
-worker: Discord test bot.py
+worker: Discord Zero bot.py
